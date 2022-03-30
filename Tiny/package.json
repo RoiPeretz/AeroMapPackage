@@ -17,7 +17,10 @@
   "scripts": {
     "clean": "rimraf ./dist/",
     "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css ./dist/",
-    "build": "npm run clean && tsc && npm run copy-files",
+    "copy-aero-assets": "copyfiles -u 1 AeroAssets/**/* ./dist/AeroAssets/",
+    "copy-cesium-assets": "copyfiles -u 3 node_modules/cesium/Source/Assets/**/* ./dist/mapResources/",
+    "copy-cesium-workers": "copyfiles -u 4 node_modules/cesium/Build/Cesium/Workers/**/* ./dist/mapResources/",
+    "build": "npm run clean && tsc && npm run copy-files && npm run copy-aero-assets && npm run copy-cesium-assets && npm run copy-cesium-workers",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

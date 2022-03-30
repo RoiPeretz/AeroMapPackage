@@ -6,13 +6,22 @@ export function initCesium() {
 
     // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
     const viewer = new Viewer('cesiumContainer', {
-    terrainProvider: createWorldTerrain()
+        terrainProvider: createWorldTerrain(),
+        baseLayerPicker: false,
+        fullscreenButton: false,
+        animation: false,
+        selectionIndicator: false,
+        infoBox: false,
+        navigationHelpButton: false,
+        timeline: false,
+        sceneModePicker: false,
+        geocoder: false,
     });
 
     viewer.entities.add({
         position: Cartesian3.fromDegrees(34.97024, 32.80687, 50),
         billboard: {
-            image: "../AeroAssets/drone.png",
+            image: "./AeroAssets/drone.png",
             width: 25, 
             height: 25,
             horizontalOrigin: HorizontalOrigin.CENTER,

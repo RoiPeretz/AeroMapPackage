@@ -1,9 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
-const cesiumSource = 'node_modules/cesium/Source';
-const cesiumWorkers = '../Build/Cesium/Workers';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const tinySource = 'node_modules/tiny/dist/';
 
 module.exports = {
   entry: './src/index.ts',
@@ -35,16 +34,15 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
           // Define relative base path in cesium for loading assets
-          CESIUM_BASE_URL: JSON.stringify('')
+          CESIUM_BASE_URL: JSON.stringify('.')
       }),
-        new CopyPlugin({
-          patterns: [
-              //{ from: "./node_modules/tiny/AeroAssets", to: "AeroAssets"},
-              { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
-              { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },
-              { from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }
-          ],
-      })
+      new CopyPlugin({
+        patterns: [
+            { from: path.join(tinySource, 'AeroAssets'), to: 'AeroAssets' },
+            { from: path.join(tinySource, 'mapResources/Assets'), to: 'Assets' },
+            { from: path.join(tinySource, 'mapResources/Workers'), to: 'Workers' }
+        ],
+    }),
     ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
