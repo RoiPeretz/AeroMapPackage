@@ -32,10 +32,6 @@ module.exports = {
           template: './src/index.html', //source
           filename: 'index.html'  //destination
         }),
-        new webpack.DefinePlugin({
-          // Define relative base path in cesium for loading assets
-          CESIUM_BASE_URL: JSON.stringify('.')
-      }),
       new CopyPlugin({
         patterns: [
             { from: path.join(tinySource, 'AeroAssets'), to: 'AeroAssets' },
