@@ -1,11 +1,18 @@
 {
-  "compilerOptions": {
-    "target": "es5",                                    
-    "module": "amd",                                    
-    "declaration": true,                                                           
-    "outDir": "./dist/",                              
+  "compilerOptions": {                             
+    "target": "es6",
+    "module": "amd",
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "declaration": true,
+    "noImplicitAny": true,                                                           
     "esModuleInterop": true,                           
+    "moduleResolution": "node",
+    "lib": ["ES6", "ES5", "DOM"],                                    
+    "types": ["reflect-metadata"],
+    "emitDecoratorMetadata": true,                              
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,            
-    "moduleResolution": "node"
   }
 }
