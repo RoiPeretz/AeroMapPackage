@@ -1,7 +1,7 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const tinySource = 'node_modules/tiny/dist/';
+const aeroMapSource = 'node_modules/aero-map/dist/';
 
 module.exports = {
   entry: './src/index.ts',
@@ -34,9 +34,9 @@ module.exports = {
         }),
       new CopyPlugin({
         patterns: [
-            { from: path.join(tinySource, 'AeroAssets'), to: 'AeroAssets' },
-            { from: path.join(tinySource, 'mapResources/Assets'), to: 'Assets' },
-            { from: path.join(tinySource, 'mapResources/Workers'), to: 'Workers' }
+            { from: path.join(aeroMapSource, 'AeroAssets'), to: 'AeroAssets' },
+            { from: path.join(aeroMapSource, 'mapResources/Assets'), to: 'Assets' },
+            { from: path.join(aeroMapSource, 'mapResources/Workers'), to: 'Workers' }
         ],
       }),
     ],

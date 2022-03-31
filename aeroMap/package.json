@@ -1,5 +1,5 @@
 {
-  "name": "tiny",
+  "name": "aero-map",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/index.js",
@@ -14,7 +14,7 @@
       "import": "./dist/index.css"
     }
   },
- "scripts": {
+  "scripts": {
     "clean": "rimraf ./dist/",
     "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css ./dist/",
     "copy-aero-assets": "copyfiles -u 1 AeroAssets/**/* ./dist/AeroAssets/",
