@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "strict": true,                                      
-    "allowJs": true,                                   
+    "strict": true,                                                                  
     "target": "es5",                                                                   
     "module": "es6",                                     
     "sourceMap": true,                                   
     "skipLibCheck": true,
     "esModuleInterop": true,                             
     "moduleResolution": "node",                          
-    "experimentalDecorators": true,                               
+    "lib": ["ES6", "ES5", "DOM"],                                 
+    "types": ["reflect-metadata"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,       
   }
 }
